@@ -29,8 +29,8 @@ classDiagram
         -String data
         -String situacao
         
-        +adicionarProduto(String nome, double preco, int quantidade)
-        +removerProduto(String nome, double preco, int quantidade)
+        +adicionarProduto(Produto p)
+        +removerProduto(Produto p)
         
         
 
