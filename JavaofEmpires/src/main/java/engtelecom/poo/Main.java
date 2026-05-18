@@ -5,8 +5,6 @@ import engtelecom.poo.personagem.Cavaleiro;
 import engtelecom.poo.personagem.Aldeao;
 import engtelecom.poo.personagem.Arqueiro;
 
-import java.util.AbstractQueue;
-
 
 public class Main {
     static void main() {
@@ -18,10 +16,11 @@ public class Main {
         personagems[4] = new Cavaleiro();
 
         for (Personagem p : personagems){
-            IO.println(p.Atacar());
-            IO.println(p.Mover());
+            // IO.println(p.atacar());
+            IO.println(p.mover());
         }
 
+        // Personagem p = new Personagem();
 
 
     }
