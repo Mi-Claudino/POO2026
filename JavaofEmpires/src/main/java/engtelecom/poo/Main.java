@@ -1,27 +1,29 @@
 package engtelecom.poo;
 
-import engtelecom.poo.personagem.Personagem;
-import engtelecom.poo.personagem.Cavaleiro;
-import engtelecom.poo.personagem.Aldeao;
-import engtelecom.poo.personagem.Arqueiro;
+import engtelecom.poo.personagem.*;
 
 
 public class Main {
     static void main() {
-        Personagem[] personagems = new Personagem[5];
-        personagems[0] = new Aldeao();
-        personagems[1] = new Arqueiro();
-        personagems[2] = new Cavaleiro();
-        personagems[3] = new Aldeao();
-        personagems[4] = new Cavaleiro();
+        Personagem[] personagens = new Personagem[5];
+        personagens[0] = new Aldeao();
+        personagens[1] = new Arqueiro();
+        personagens[2] = new Cavaleiro();
+        personagens[3] = new Aldeao();
+        personagens[4] = new Cavaleiro();
 
-        for (Personagem p : personagems){
-            // IO.println(p.atacar());
-            IO.println(p.mover());
+        for (Personagem p : personagens){
+            if (p instanceof Aldeao){
+            IO.println(((Aldeao) p).coletarMadeira());
         }
+            IO.println(p.mover());
 
-        // Personagem p = new Personagem();
+
+            // Personagem p = new Personagem();
 
 
     }
+        Aldeao a = new Aldeao();
+        Guerreiro g = a;
+}
 }
