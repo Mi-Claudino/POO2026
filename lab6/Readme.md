@@ -21,12 +21,12 @@ classDiagram
 
     class Cronometro {
         <<Abstract>>
-        + RELOGIO : int$
-        + PROGRESSIVO : int$
-        + REGRESSIVO : int$
-        + PEQUENO : int$
-        + MEDIO : int$
-        + GRANDE : int$
+        + RELOGIO : int
+        + PROGRESSIVO : int
+        + REGRESSIVO : int
+        + PEQUENO : int
+        + MEDIO : int
+        + GRANDE : int
         # modo : int
         # tamanho : int
         # finalizado : boolean
@@ -90,8 +90,6 @@ classDiagram
         + Analogico(draw : Draw, centroX : double, centroY : double, raio : double)
         + Analogico(draw : Draw, centroX : double, centroY : double, raio : double, hora : int, minuto : int, segundo : int)
         + setCores(corRelogio : Color, corTracos : Color, corHoras : Color, corMinutos : Color, corSegundos : Color) void
-        + atualizar() void
-        + desenhar() void
     }
 
 
