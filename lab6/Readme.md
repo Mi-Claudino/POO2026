@@ -1,98 +1,67 @@
 ```mermaid
 classDiagram
-    direction BT
 
     class Relogios {
-        <<Abstract>>
-        # hora : int
-        # minuto : int
-        # segundo : int
-        # draw : Draw
-        + Relogios(draw : Draw)
-        + Relogios(draw : Draw, hora : int, minuto : int, segundo : int)
-        + setHora(hora : int, minuto : int, segundo : int) void
-        + getHora() int
-        + getMinuto() int
-        + getSegundo() int
-        + tick() void
-        + atualizar()* void
-        + desenhar()* void
-    }
-
-    class Cronometro {
-        <<Abstract>>
-        + RELOGIO : int
-        + PROGRESSIVO : int
-        + REGRESSIVO : int
-        + PEQUENO : int
-        + MEDIO : int
-        + GRANDE : int
-        # modo : int
-        # tamanho : int
-        # finalizado : boolean
-        + Cronometro(draw : Draw, modo : int, tamanho : int)
-        + Cronometro(draw : Draw, hora : int, minuto : int, segundo : int, modo : int, tamanho : int)
-        + tick() void
-        + reiniciar() void
-        + getModo() int
-        + getTamanho() int
-        + isFinalizado() boolean
-    }
-
-    class Relogio7 {
-        - displays : Segmentos[]
-        - posX : double
-        - posY : double
-        - corDigitos : Color
-        + Relogio7(draw : Draw, posX : double, posY : double, modo : int, tamanho : int, cor : Color)
-        + Relogio7(draw : Draw, posX : double, posY : double, hora : int, minuto : int, segundo : int, modo : int, tamanho : int, cor : Color)
-        + atualizar() void
-        + desenhar() void
-    }
-
-    class Segmentos {
-        - draw : Draw
-        - x : double
-        - y : double
-        - largura : double
-        - altura : double
-        - corAtiva : Color
-        - corInativa : Color
-        - digito : int
-        + Segmentos(draw : Draw, x : double, y : double, largura : double, altura : double, corAtiva : Color)
-        + setDigito(digito : int) void
-        + desenhar() void
-    }
-
-    class Texto {
-        + MIN_FONTE : int$
-        + MAX_FONTE : int$
-        - posX : double
-        - posY : double
-        - tamFonte : int
-        - cor : Color
-        - fonte : Font
-        + Texto(draw : Draw, posX : double, posY : double, tamFonte : int, modo : int, cor : Color, fonte : Font)
-        + Texto(draw : Draw, posX : double, posY : double, tamFonte : int, hora : int, minuto : int, segundo : int, modo : int, cor : Color, fonte : Font)
-        + atualizar() void
-        + desenhar() void
+        <<abstract>>
+        # horas : int
+        # minutos : int
+        # segundos : int
+        # x : double
+        # y : double
+        + Relogio(x: double, y: double)
+        + Relogio(hora: int, min: int, sec: int, x: double, y: double)
+        + setTempo(hora: int, min: int, sec: int) void
+        + atualizarTempo() void*
+        + desenhar(desenho: Draw) void*
+        # avancarTempo() void
     }
 
     class Analogico {
-        - centroX : double
-        - centroY : double
         - raio : double
-        - corRelogio : Color
-        - corTracos : Color
-        - corHoras : Color
-        - corMinutos : Color
-        - corSegundos : Color
-        + Analogico(draw : Draw, centroX : double, centroY : double, raio : double)
-        + Analogico(draw : Draw, centroX : double, centroY : double, raio : double, hora : int, minuto : int, segundo : int)
-        + setCores(corRelogio : Color, corTracos : Color, corHoras : Color, corMinutos : Color, corSegundos : Color) void
+        + RelogioAnalogico(x: double, y: double)
+        + RelogioAnalogico(hora: int, min: int, sec: int, x: double, y: double)
+        + atualizarTempo() void
+        + desenhar(desenho: Draw) void
     }
 
+    class Cronometro {
+        <<abstract>>
+        # modo : Modos
+        + RelogioDigital(x: double, y: double, modo: Modos)
+        + RelogioDigital(hora: int, min: int, sec: int, x: double, y: double, modo: Modos)
+        + atualizarTempo() void
+        # reverse() void
+    }
 
+    class Relogio7 {
+        - displays : ArrayList<Segmentos> ~displays~
+        - tamanho : double
+        - cor : Color
+        + RelogioDisplay(x: double, y: double, tamanho: double, int modo, cor: Color)
+        + RelogioDisplay(hora: int, min: int, sec: int, x: double, y: double, tamanho: double, modo: Modos, cor: Color)
+        - montarSegmentos(tamanho: int) void
+        - ligarDisplay() void
+        + desenhar(desenho: Draw) void
+    }
+
+    class Texto {
+        - tamanhoFonte : int
+        - cor : Color
+        - fonte : Font
+        + RelogioTexto(x: double, y: double, tamanhoFonte: int, modo: Modos, cor: Color)
+        + RelogioTexto(hora: int, min: int, sec: int, x: double, y: double, tamanhoFonte: int, modo: Modos, cor: Color)
+        - setFonte(tamanho: int) void
+        + desenhar(desenho: Draw) void
+    }
+
+    class Segmentos {
+        - segX double[][]
+        - segY double[][]
+        - ligado boolean[]
+        + Segmentos(x double, y double, tamanho double)
+        + setNum(numero int) void
+        + desenhar(desenho Draw, cor Color) void
+    }
 
     Cronometro --|> Relogios
     Texto      --|> Cronometro
@@ -100,6 +69,4 @@ classDiagram
     Analogico  --|> Relogios
 
     Relogio7 "1" *-- "6" Segmentos
-
-
 ```

@@ -1,54 +1,51 @@
 package engtelecom.poo;
 
-import edu.princeton.cs.algs4.Draw;
 import java.time.LocalTime;
 
+import edu.princeton.cs.algs4.Draw;
+
 public abstract class Relogios {
+    protected int horas;
+    protected int minutos;
+    protected int segundos;
+    protected double x;
+    protected double y;
 
-    protected int hora;
-    protected int minuto;
-    protected int segundo;
-    protected Draw draw;
-
-
-    public Relogios(Draw draw) {
-        this.draw = draw;
-        LocalTime agora = LocalTime.now();
-        this.hora = agora.getHour();
-        this.minuto = agora.getMinute();
-        this.segundo = agora.getSecond();
+    public Relogios(double x, double y) {
+        this.x = x;
+        this.y = y;
+        LocalTime now = LocalTime.now();
+        this.horas = now.getHour();
+        this.minutos = now.getMinute();
+        this.segundos = now.getSecond();
     }
 
-    public Relogios(Draw draw, int hora, int minuto, int segundo) {
-        this.draw = draw;
-        setHora(hora, minuto, segundo);
+    public Relogios(int hora, int min, int sec, double x, double y) {
+        if (hora >= 0 && hora < 24 && min >= 0 && min < 60 && sec >= 0 && sec < 60) {
+            this.x = x;
+            this.y = y;
+            this.horas = hora;
+            this.minutos = min;
+            this.segundos = sec;
+        }
     }
 
-    public void setHora(int hora, int minuto, int segundo) {
-        this.hora   = Math.max(0, Math.min(23, hora));
-        this.minuto = Math.max(0, Math.min(59, minuto));
-        this.segundo = Math.max(0, Math.min(59, segundo));
-    }
-
-    public int getHora()    { return hora; }
-    public int getMinuto()  { return minuto; }
-    public int getSegundo() { return segundo; }
-
-
-    public void tick() {
-        segundo++;
-        if (segundo >= 60) {
-            segundo = 0;
-            minuto++;
-            if (minuto >= 60) {
-                minuto = 0;
-                hora++;
-                if (hora >= 24) {
-                    hora = 0;
+    protected void avancarTempo() {
+        this.segundos++;
+        if (this.segundos == 60) {
+            this.segundos = 0;
+            this.minutos++;
+            if (this.minutos == 60) {
+                this.minutos = 0;
+                this.horas++;
+                if (this.horas == 24) {
+                    this.horas = 0;
                 }
             }
         }
     }
-    public abstract void atualizar();
-    public abstract void desenhar();
+
+    public abstract void atualizarTempo();
+
+    public abstract void desenhar(Draw desenho);
 }
