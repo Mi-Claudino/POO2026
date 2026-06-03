@@ -2,7 +2,9 @@ package engtelecom.poo;
 
 import java.awt.image.ImagingOpException;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 
 public class Main {
     static void main() {
@@ -39,8 +41,15 @@ public class Main {
 //        }
 
 
+        Caixa<String> c = new Caixa<>("Olá mundo");
+        Caixa<Pessoa> pe = new Caixa<>(new Pessoa("Joao"));
 
+        String s = c.getConteudo();
 
+        // String errado = pe.getConteudo();
+
+        ArrayList<String> a;
+        HashMap<String, String> b;
 
 
     }

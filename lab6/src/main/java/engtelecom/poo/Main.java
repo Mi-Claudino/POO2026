@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("1.Normal 2.Prog 3.Rreg ");
+        System.out.println("1.Normal 2. Não implementado 3.Rreg ");
         int escolha = Integer.parseInt(IO.readln("Escolha: "));
         if (escolha < 1 || escolha > 3) {
             throw new IllegalArgumentException("Opcao inválida: " + escolha);

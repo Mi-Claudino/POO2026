@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da2cefd8-67d3-4bc1-83ca-1229aafe53ef" name="Changes" comment="" />
+    <list default="true" id="da2cefd8-67d3-4bc1-83ca-1229aafe53ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Enumeracoes/src/main/java/engtelecom/poo/Caixa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enumeracoes/src/main/java/engtelecom/poo/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enumeracoes/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enumeracoes/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enumeracoes/src/main/java/engtelecom/poo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enumeracoes/src/main/java/engtelecom/poo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/src/main/java/engtelecom/poo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/src/main/java/engtelecom/poo/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,22 +37,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/aluno/IdeaProjects/POO2026",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -66,6 +75,8 @@
       <workItem from="1779101048377" duration="13000" />
       <workItem from="1779281081137" duration="14000" />
       <workItem from="1780310391290" duration="10000" />
+      <workItem from="1780491003912" duration="354000" />
+      <workItem from="1780495822470" duration="2000" />
     </task>
     <servers />
   </component>
