@@ -5,9 +5,9 @@ import edu.princeton.cs.algs4.Draw;
 import javax.swing.*;
 import java.awt.*;
 
-public class CartaGrafica extends Carta {
+public class CartaGrafica extends Carta implements Elemento{
 
-    private Draw draw;
+
     private double x;
     private double y;
     private boolean up;
@@ -19,10 +19,9 @@ public class CartaGrafica extends Carta {
         this.up = up;
     }
 
+    @Override
     public void desenhar(Draw desenho) {
-
-        this.draw.picture(this.x,this.y,"cartas/"+valor.inicial+naipe.inicial+".png");
-        this.draw.show();
+        desenho.picture(this.x,this.y,"cartas/"+valor.inicial+naipe.inicial+".png");
     }
 
     public boolean clicouDentro(double x, double y){

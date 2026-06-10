@@ -10,7 +10,4 @@ public class Carta {
         this.valor = valor;
         this.naipe = naipe;
     }
-
-    public void desenhar(Draw draw) {
-    }
 }

@@ -42,7 +42,4 @@ public enum Valores {
                 '}';
     }
 
-    public static getByInicial(int i){
-
-    }
 }
